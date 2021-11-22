@@ -8,6 +8,7 @@ const REMOVEERROR = "error/remove/Error";
 
 const SETLOADER = "loader/setLoader";
 const REMOVELOADER = "loader/removeLoader";
+
 export {
   ADDNEWCONTACT,
   DELETECONTACT,

@@ -1,34 +1,9 @@
 {
   "contacts": [
     {
-      "name": "Bers MBers",
-      "number": "9(999)999 99 99",
-      "id": "9"
-    },
-    {
-      "name": "Some Somovich",
-      "number": "8(888)888 88 88",
-      "id": "8"
-    },
-    {
-      "name": "Who Whovich",
-      "number": "7(777)777 77 77",
-      "id": "7"
-    },
-    {
-      "name": "You Youvich",
-      "number": "6(666)666 66 66",
-      "id": "6"
-    },
-    {
-      "name": "Me Mevich",
-      "number": "5(555)555 55 55",
-      "id": "5"
-    },
-    {
-      "name": "He Hevich",
-      "number": "4(444)444 44 44",
-      "id": "4"
+      "name": "some",
+      "number": "843534095840395",
+      "id": "a785b2a2-30b4-41ad-90d2-b8c97c063306"
     }
   ]
 }
