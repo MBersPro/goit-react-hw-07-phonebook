@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ul, p } from "./ContactList.module.css";
 import { connect } from "react-redux";
-import { deleteContact } from "../../redux/contacts/actions";
+import { deleteContact } from "../../redux/contacts/phoneBookActions";
 
 const ContactList = ({ contacts, deleteContact }) => {
   return (
@@ -24,9 +24,9 @@ ContactList.propTypes = {
   deleteContact: PropTypes.func.isRequired
 }
 const mapStateToProps = (state) => {
-  if (state.filterName)
-    return { contacts: state.contacts.filter(({ name }) => name.toLowerCase().includes(state.filterName)) };
-  return {contacts: state.contacts}
+  if (state.contacts.filterName)
+    return {contacts: state.contacts.contactsList.filter(({ name }) => name.toLowerCase().includes(state.contacts.filterName)) };
+  return {contacts: state.contacts.contactsList}
 }
 
 const mapDispatchToProps = {

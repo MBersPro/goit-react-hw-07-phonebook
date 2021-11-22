@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { form, label, input } from "./ContactForm.module.css";
 import { connect } from "react-redux";
-import { addNewContact } from "../../redux/contacts/actions";
+import { addNewContact } from "../../redux/contacts/phoneBookActions";
 
 const initialState = {
   name: "",

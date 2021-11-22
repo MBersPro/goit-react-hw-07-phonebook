@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { filterName } from "../../redux/contacts/actions";
+import { filterName } from "../../redux/contacts/phoneBookActions";
 
 const Filter = ({ filterName }) => {
   // const [value, setValue] = useState("");
@@ -22,12 +22,6 @@ Filter.propTypes = {
   setFilter: PropTypes.func.isRequired,
   filter: PropTypes.func.isRequired,
 };
-
-// const mapStateToProps = (state) => {
-//     return {
-//         filterName: state.filterName
-//     }
-// }
 
 const mapDispatchToProps = {
   filterName,
