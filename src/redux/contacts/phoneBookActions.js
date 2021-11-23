@@ -1,33 +1,42 @@
 import { createAction } from "@reduxjs/toolkit";
 import {
-  ADDNEWCONTACT,
-  DELETECONTACT,
+  GETCONTACTSSUCCESS,
+  ADDNEWCONTACTSUCCESS,
+  DELETECONTACTSUCCESS,
   FILTERNAME,
-  GETCONTACTS,
+  GETCONTACTSERROR,
+  ADDNEWCONTACTERROR,
+  DELETECONTACTERROR,
   REMOVEERROR,
-  REMOVELOADER,
-  SETERROR,
-  SETLOADER,
+  GETCONTACTSREQUEST,
+  ADDNEWCONTACTREQUEST,
+  DELETECONTACTREQUEST,
 } from "./phoneBookTypes";
 
-const getContacts = createAction(GETCONTACTS);
-const addNewContact = createAction(ADDNEWCONTACT);
-const deleteContact = createAction(DELETECONTACT);
+const getContactsSuccess = createAction(GETCONTACTSSUCCESS);
+const addNewContactSuccess = createAction(ADDNEWCONTACTSUCCESS);
+const deleteContactSuccess = createAction(DELETECONTACTSUCCESS);
 const filterName = createAction(FILTERNAME);
 
-const setError = createAction(SETERROR);
+const getContactsError = createAction(GETCONTACTSERROR)
+const addNewContactError = createAction(ADDNEWCONTACTERROR)
+const deleteContactError = createAction(DELETECONTACTERROR);
 const removeError = createAction(REMOVEERROR)
 
-const setLoader = createAction(SETLOADER)
-const removeLoader = createAction(REMOVELOADER)
+const getContactsRequest = createAction(GETCONTACTSREQUEST)
+const addNewContactRequest = createAction(ADDNEWCONTACTREQUEST)
+const deleteContactRequest = createAction(DELETECONTACTREQUEST)
 
 export {
-  addNewContact,
-  deleteContact,
+  addNewContactSuccess,
+  deleteContactSuccess,
+  getContactsSuccess,
   filterName,
-  setError,
-  getContacts,
-  setLoader,
+  getContactsError,
+  addNewContactError,
+  deleteContactError,
   removeError,
-  removeLoader,
+  getContactsRequest,
+  addNewContactRequest,
+  deleteContactRequest,
 };

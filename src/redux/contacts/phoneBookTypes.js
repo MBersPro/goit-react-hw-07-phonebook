@@ -1,21 +1,30 @@
-const GETCONTACTS = "contacts/getContacts";
-const ADDNEWCONTACT = "contacts/addNewContact";
-const DELETECONTACT = "contacts/deleteContact";
+const GETCONTACTSSUCCESS = "contacts/getContactsSuccess";
+const ADDNEWCONTACTSUCCESS = "contacts/addNewContactSuccess";
+const DELETECONTACTSUCCESS = "contacts/deleteContactSuccess";
 const FILTERNAME = "name/filterName";
 
-const SETERROR = "error/setError";
-const REMOVEERROR = "error/remove/Error";
+const GETCONTACTSERROR = "error/getContactsError";
+const ADDNEWCONTACTERROR = "error/addNewContactError";
+const DELETECONTACTERROR = "error/deleteContactError";
+const REMOVEERROR = "error/removeError";
 
-const SETLOADER = "loader/setLoader";
-const REMOVELOADER = "loader/removeLoader";
+const GETCONTACTSREQUEST = "loader/getContactsRequest";
+const ADDNEWCONTACTREQUEST = "loader/addNewContactRequest";
+const DELETECONTACTREQUEST = "loader/deleteContactRequest";
+
+
+
 
 export {
-  ADDNEWCONTACT,
-  DELETECONTACT,
+  GETCONTACTSSUCCESS,
+  ADDNEWCONTACTSUCCESS,
+  DELETECONTACTSUCCESS,
   FILTERNAME,
-  GETCONTACTS,
-  SETERROR,
+  GETCONTACTSERROR,
+  ADDNEWCONTACTERROR,
+  DELETECONTACTERROR,
   REMOVEERROR,
-  SETLOADER,
-  REMOVELOADER,
+  GETCONTACTSREQUEST,
+  ADDNEWCONTACTREQUEST,
+  DELETECONTACTREQUEST,
 };

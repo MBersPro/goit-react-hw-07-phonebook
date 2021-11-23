@@ -1,39 +1,43 @@
 import axios from "axios";
 
 import {
-  addNewContact,
-  deleteContact,
-  getContacts,
-  setError,
-  setLoader,
+  addNewContactSuccess,
+  deleteContactSuccess,
+  getContactsSuccess,
+  getContactsError,
+  addNewContactError,
+  deleteContactError,
+  getContactsRequest,
+  addNewContactRequest,
+  deleteContactRequest,
 } from "./phoneBookActions";
 
 axios.defaults.baseURL = "http://localhost:4000";
 
 export const getContactsOperation = () => (dispatch) => {
-  dispatch(setLoader());
+  dispatch(getContactsRequest());
   axios
     .get("/contacts")
-    .then(({ data }) => dispatch(getContacts(data)))
-    .catch(() => dispatch(setError()));
+    .then(({ data }) => dispatch(getContactsSuccess(data)))
+    .catch(() => dispatch(getContactsError()));
 };
 
 export const addNewContactOperation = (contact) => (dispatch) => {
-  dispatch(setLoader());
+  dispatch(addNewContactRequest());
   axios
     .post("/contacts/", contact)
-    .then(({ data }) => dispatch(addNewContact(data)))
+    .then(({ data }) => dispatch(addNewContactSuccess(data)))
     .catch((error) => {
-      dispatch(setError(error));
+      dispatch(addNewContactError(error));
     });
 };
 
 export const deleteContactOperation = (id) => (dispatch) => {
-  dispatch(setLoader());
+  dispatch(deleteContactRequest());
   axios
     .delete(`/contacts/${id}`)
-    .then(() => dispatch(deleteContact(id)))
+    .then(() => dispatch(deleteContactSuccess(id)))
     .catch((error) => {
-      dispatch(setError(error));
+      dispatch(deleteContactError(error));
     });
 };

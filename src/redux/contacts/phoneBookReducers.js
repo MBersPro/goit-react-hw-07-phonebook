@@ -1,13 +1,16 @@
 import { createReducer, combineReducers } from "@reduxjs/toolkit";
 import {
-  addNewContact,
-  deleteContact,
+  addNewContactSuccess,
+  deleteContactSuccess,
+  getContactsSuccess,
   filterName,
-  getContacts,
-  setError,
-  setLoader,
+  getContactsError,
+  addNewContactError,
+  deleteContactError,
   removeError,
-  removeLoader,
+  getContactsRequest,
+  addNewContactRequest,
+  deleteContactRequest,
 } from "./phoneBookActions";
 
 const initialState = {
@@ -16,15 +19,15 @@ const initialState = {
 };
 
 const contactsReducer = createReducer(initialState, {
-  [getContacts]: (state, action) => ({
+  [getContactsSuccess]: (state, action) => ({
     ...state,
     contactsList: action.payload,
   }),
-  [addNewContact]: (state, action) => ({
+  [addNewContactSuccess]: (state, action) => ({
     ...state,
     contactsList: [...state.contactsList, action.payload],
   }),
-  [deleteContact]: (state, action) => ({
+  [deleteContactSuccess]: (state, action) => ({
     ...state,
     contactsList: state.contactsList.filter(
       (contact) => contact.id !== action.payload
@@ -33,19 +36,21 @@ const contactsReducer = createReducer(initialState, {
   [filterName]: (state, action) => ({ ...state, filterName: action.payload }),
 });
 
-const errorReducer = createReducer("", {
-  [setError]: () => true,
+const errorReducer = createReducer(false, {
+  [getContactsError]: () => true,
+  [addNewContactError]: () => true,
+  [deleteContactError]: () => true,
   [removeError]: () => false,
-  [getContacts]: () => false,
 });
 
 const loaderReducer = createReducer(false, {
-  [setLoader]: () => true,
-  [removeLoader]: () => false,
-  [getContacts]: () => false,
-  [addNewContact]: () => false,
-  [setError]: () => false,
-  [deleteContact]: () => false,
+  [getContactsRequest]: () => true,
+  [addNewContactRequest]: () => true,
+  [deleteContactRequest]: () => true,
+
+  [getContactsSuccess]: () => false,
+  [addNewContactSuccess]: () => false,
+  [deleteContactSuccess]: () => false,
 });
 
 const phoneBookReducer = combineReducers({
